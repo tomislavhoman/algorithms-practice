@@ -5,6 +5,7 @@ public class StackTest {
     public static void main(String[] args) {
 
         test(new ResizableArrayStack<>());
+        test(new LinkedStack<>());
     }
 
     private static void test(Stack<Integer> stack) {

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03455e55-d08a-449e-a357-7d299007372c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/examples/basic/ResizableArrayQueue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/examples/basic/QueueTest.java" afterPath="$PROJECT_DIR$/src/com/examples/basic/QueueTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/examples/basic/LinkedStack.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/examples/basic/StackTest.java" afterPath="$PROJECT_DIR$/src/com/examples/basic/StackTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="algorithms-practice.iws" />
@@ -30,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/examples/basic/StackTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -53,10 +53,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResizableArrayQueue.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ResizableArrayQueue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/examples/basic/ResizableArrayQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.7918782">
+            <state vertical-scroll-proportion="0.0">
               <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
               <folding>
                 <element signature="e#263#293#0" expanded="true" />
@@ -67,6 +67,18 @@
                 <element signature="e#1114#1115#0" expanded="true" />
                 <element signature="e#1161#1162#0" expanded="true" />
                 <element signature="e#1455#1485#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LinkedStack.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/examples/basic/LinkedStack.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.9493671">
+              <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+              <folding>
+                <element signature="e#486#487#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -112,10 +124,11 @@
         <option value="$PROJECT_DIR$/src/com/examples/basic/ArrayStack.java" />
         <option value="$PROJECT_DIR$/src/com/examples/basic/UnionFind.java" />
         <option value="$PROJECT_DIR$/src/com/examples/basic/UnionFindTest.java" />
-        <option value="$PROJECT_DIR$/src/com/examples/basic/StackTest.java" />
         <option value="$PROJECT_DIR$/src/com/examples/basic/ResizableArrayStack.java" />
         <option value="$PROJECT_DIR$/src/com/examples/basic/QueueTest.java" />
         <option value="$PROJECT_DIR$/src/com/examples/basic/ResizableArrayQueue.java" />
+        <option value="$PROJECT_DIR$/src/com/examples/basic/StackTest.java" />
+        <option value="$PROJECT_DIR$/src/com/examples/basic/LinkedStack.java" />
       </list>
     </option>
   </component>
@@ -125,7 +138,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="655" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -210,7 +223,7 @@
       <recent name="com.examples.basic" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.QueueTest">
+  <component name="RunManager" selected="Application.StackTest">
     <configuration default="false" name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Test" />
@@ -441,8 +454,8 @@
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Application.QueueTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.StackTest" />
+        <item index="0" class="java.lang.String" itemvalue="Application.StackTest" />
+        <item index="1" class="java.lang.String" itemvalue="Application.QueueTest" />
         <item index="2" class="java.lang.String" itemvalue="Application.UnionFindTest" />
         <item index="3" class="java.lang.String" itemvalue="Application.Test" />
       </list>
@@ -459,19 +472,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="655" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="735" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32882884" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27986348" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24624625" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -496,7 +509,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/examples/basic/StackTest.java</url>
-          <line>11</line>
+          <line>12</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -554,14 +567,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/examples/basic/StackTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/examples/basic/ResizableArrayStack.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -587,7 +592,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/examples/basic/ResizableArrayQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.7918782">
+        <state vertical-scroll-proportion="0.0">
           <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
           <folding>
             <element signature="e#263#293#0" expanded="true" />
@@ -598,6 +603,24 @@
             <element signature="e#1114#1115#0" expanded="true" />
             <element signature="e#1161#1162#0" expanded="true" />
             <element signature="e#1455#1485#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/examples/basic/StackTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/examples/basic/LinkedStack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9493671">
+          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+          <folding>
+            <element signature="e#486#487#0" expanded="true" />
           </folding>
         </state>
       </provider>
