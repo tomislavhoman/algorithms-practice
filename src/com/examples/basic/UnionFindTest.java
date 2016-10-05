@@ -5,6 +5,7 @@ public class UnionFindTest {
     public static void main(String[] args) {
 
         test(new QuickFindUnionFind(10));
+        test(new QuickUnionUnionFind(10));
     }
 
     private static void test(UnionFind unionFind) {
