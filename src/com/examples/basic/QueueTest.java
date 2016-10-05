@@ -5,6 +5,7 @@ public class QueueTest {
     public static void main(String[] args) {
 
         test(new ResizableArrayQueue<>());
+        test(new LinkedQueue<>());
     }
 
     private static void test(Queue<Integer> queue) {

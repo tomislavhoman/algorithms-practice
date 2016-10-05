@@ -17,7 +17,7 @@ public class LinkedStack<Item> implements Stack<Item> {
     @Override
     public Item pop() {
 
-        Item item = head.item;
+        Item item = head.item; // No null checks for brevity
         head = head.next;
         return item;
     }
