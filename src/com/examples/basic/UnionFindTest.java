@@ -4,12 +4,44 @@ public class UnionFindTest {
 
     public static void main(String[] args) {
 
-        test(new QuickFindUnionFind(10));
-        test(new QuickUnionUnionFind(10));
+        testUnweighted(new QuickFindUnionFind(10));
+        testUnweighted(new QuickUnionUnionFind(10));
+        testWeighted(new WeightedQuickUnionUnionFind(10));
     }
 
-    private static void test(UnionFind unionFind) {
+    private static void testUnweighted(UnionFind unionFind) {
 
+        testConnectivity(unionFind);
+
+        assert unionFind.find(0) == 1;
+        assert unionFind.find(1) == 1;
+        assert unionFind.find(2) == 1;
+        assert unionFind.find(3) == 8;
+        assert unionFind.find(4) == 8;
+        assert unionFind.find(5) == 1;
+        assert unionFind.find(6) == 1;
+        assert unionFind.find(7) == 1;
+        assert unionFind.find(8) == 8;
+        assert unionFind.find(9) == 8;
+    }
+
+    private static void testWeighted(UnionFind unionFind) {
+
+        testConnectivity(unionFind);
+
+        assert unionFind.find(0) == 6;
+        assert unionFind.find(1) == 6;
+        assert unionFind.find(2) == 6;
+        assert unionFind.find(3) == 4;
+        assert unionFind.find(4) == 4;
+        assert unionFind.find(5) == 6;
+        assert unionFind.find(6) == 6;
+        assert unionFind.find(7) == 6;
+        assert unionFind.find(8) == 4;
+        assert unionFind.find(9) == 4;
+    }
+
+    private static void testConnectivity(UnionFind unionFind) {
         assert unionFind.count() == 10;
         unionNotConnected(unionFind, 4, 3);
         assert unionFind.count() == 9;
@@ -33,17 +65,6 @@ public class UnionFindTest {
         assert unionFind.count() == 2;
         assertConnected(unionFind, 6, 7);
         assert unionFind.count() == 2;
-
-        assert unionFind.find(0) == 1;
-        assert unionFind.find(1) == 1;
-        assert unionFind.find(2) == 1;
-        assert unionFind.find(3) == 8;
-        assert unionFind.find(4) == 8;
-        assert unionFind.find(5) == 1;
-        assert unionFind.find(6) == 1;
-        assert unionFind.find(7) == 1;
-        assert unionFind.find(8) == 8;
-        assert unionFind.find(9) == 8;
     }
 
     private static void unionNotConnected(UnionFind unionFind, int p, int q) {
