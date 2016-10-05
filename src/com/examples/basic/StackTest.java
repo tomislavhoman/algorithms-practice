@@ -4,22 +4,7 @@ public class StackTest {
 
     public static void main(String[] args) {
 
-        test(new Stack<Integer>() {
-            @Override
-            public void push(Integer integer) {
-
-            }
-
-            @Override
-            public Integer pop() {
-                return null;
-            }
-
-            @Override
-            public boolean isEmpty() {
-                return false;
-            }
-        });
+        test(new ResizableArrayStack<>());
     }
 
     private static void test(Stack<Integer> stack) {
@@ -32,7 +17,15 @@ public class StackTest {
 
         stack.push(5);
         stack.push(4);
+        stack.push(44);
+        stack.push(45);
+        stack.push(46);
+        stack.push(47);
 
+        assert stack.pop() == 47 : "Should be 47";
+        assert stack.pop() == 46 : "Should be 46";
+        assert stack.pop() == 45 : "Should be 45";
+        assert stack.pop() == 44 : "Should be 44";
         assert stack.pop() == 4 : "Should be 4";
         assert stack.pop() == 5 : "Should be 5";
         assert stack.pop() == 7 : "Should be 7";
