@@ -4,22 +4,7 @@ public class QueueTest {
 
     public static void main(String[] args) {
 
-        test(new Queue<Integer>() {
-            @Override
-            public void enqueue(Integer integer) {
-
-            }
-
-            @Override
-            public Integer dequeue() {
-                return null;
-            }
-
-            @Override
-            public boolean isEmpty() {
-                return false;
-            }
-        });
+        test(new ResizableArrayQueue<>());
     }
 
     private static void test(Queue<Integer> queue) {
@@ -29,6 +14,14 @@ public class QueueTest {
         queue.enqueue(1);
         assert !queue.isEmpty() : "Shouldn't be empty";
 
+        queue.enqueue(6);
+        queue.enqueue(5);
+
+        assert queue.dequeue() == 1 : "Should be 1";
+        assert queue.dequeue() == 6 : "Should be 6";
+        assert queue.dequeue() == 5 : "Should be 5";
+
+        queue.enqueue(1);
         queue.enqueue(6);
         queue.enqueue(5);
         queue.enqueue(44);
