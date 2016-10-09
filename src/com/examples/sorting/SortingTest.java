@@ -15,6 +15,7 @@ public class SortingTest {
         testSortAlgorithm(new SelectionSort<>());
         testSortAlgorithm(new InsertionSort<>());
         testSortAlgorithm(new ShellSort<>());
+        testSortAlgorithm(new MergeSort<>());
 
         System.out.println("All ok");
     }
