@@ -47,7 +47,7 @@ public class BinarySearchSymbolTable<Key extends Comparable<Key>, Value> impleme
             return;
         }
 
-        delete(rank, key);
+        delete(rank);
         size--;
 
         if (size > 0 && size <= keys.length / 4) {
@@ -103,7 +103,7 @@ public class BinarySearchSymbolTable<Key extends Comparable<Key>, Value> impleme
         values[position] = value;
     }
 
-    private void delete(int position, Key key) {
+    private void delete(int position) {
         for (int i = position; i < size; i++) {
             keys[i] = keys[i + 1];
             values[i] = values[i + 1];
