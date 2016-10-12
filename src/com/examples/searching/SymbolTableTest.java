@@ -5,6 +5,7 @@ public class SymbolTableTest {
     public static void main(String[] args) {
 
         testSymbolTable(new SequentialSymbolTable<>());
+        testSymbolTable(new BinarySearchSymbolTable<>());
         System.out.println("All ok");
     }
 
