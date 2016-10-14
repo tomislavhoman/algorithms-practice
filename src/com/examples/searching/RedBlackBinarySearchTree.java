@@ -1,7 +1,6 @@
 package com.examples.searching;
 
-// What a name :)
-public class BalancedBinarySearchTreeSymbolTable<Key extends Comparable<Key>, Value> implements OrderedSymbolTable<Key, Value> {
+public class RedBlackBinarySearchTree<Key extends Comparable<Key>, Value> implements OrderedSymbolTable<Key, Value> {
 
     private static final boolean RED = true;
     private static final boolean BLACK = false;

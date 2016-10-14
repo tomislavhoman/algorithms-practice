@@ -1,6 +1,6 @@
 package com.examples.searching;
 
-public class BinarySearchTreeSymbolTable<Key extends Comparable<Key>, Value> implements OrderedSymbolTable<Key, Value> {
+public class BinarySearchTree<Key extends Comparable<Key>, Value> implements OrderedSymbolTable<Key, Value> {
 
     private Node root;
 

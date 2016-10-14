@@ -6,9 +6,9 @@ public class SymbolTableTest {
 
         testSymbolTable(new SequentialSymbolTable<>());
         testSymbolTable(new BinarySearchSymbolTable<>());
-        testSymbolTable(new BinarySearchTreeSymbolTable<>());
-        testSymbolTable(new BalancedBinarySearchTreeSymbolTable<>());
-        inspectBalancedBSTHeight(new BalancedBinarySearchTreeSymbolTable<>());
+        testSymbolTable(new BinarySearchTree<>());
+        testSymbolTable(new RedBlackBinarySearchTree<>());
+        inspectBalancedBSTHeight(new RedBlackBinarySearchTree<>());
         System.out.println("All ok");
     }
 
@@ -55,7 +55,7 @@ public class SymbolTableTest {
         assert symbolTable.isEmpty();
     }
 
-    private static void inspectBalancedBSTHeight(BalancedBinarySearchTreeSymbolTable<Integer, String> tree) {
+    private static void inspectBalancedBSTHeight(RedBlackBinarySearchTree<Integer, String> tree) {
         tree.put(1, "1");
         tree.put(2, "2");
         tree.put(3, "3");
