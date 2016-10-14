@@ -28,6 +28,7 @@ public class SymbolTableTest {
         symbolTable.put(888, "888");
         symbolTable.put(257, "257");
         symbolTable.put(16, "16");
+        symbolTable.put(321, "323333");
         symbolTable.put(321, "321");
 
         assert symbolTable.size() == 7;
