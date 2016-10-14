@@ -9,6 +9,7 @@ public class SymbolTableTest {
         testSymbolTable(new BinarySearchTree<>());
         testSymbolTable(new RedBlackBinarySearchTree<>());
         inspectBalancedBSTHeight(new RedBlackBinarySearchTree<>());
+        testSymbolTable(new SeparateChainingHashTable<>());
         System.out.println("All ok");
     }
 
