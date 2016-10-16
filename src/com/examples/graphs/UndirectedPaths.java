@@ -8,19 +8,19 @@ public class UndirectedPaths {
     private final int s;
 
     private boolean marked[];
-    private Integer edgeTo[];
+    private int edgeTo[];
 
     public UndirectedPaths(Graph graph, int s) {
 
         this.s = s;
         this.marked = new boolean[graph.v()];
-        this.edgeTo = new Integer[graph.v()];
+        this.edgeTo = new int[graph.v()];
         for (int i = 0, v = graph.v(); i < v; i++) {
             this.edgeTo[i] = i;
         }
 
         this.marked[s] = true;
-        this.edgeTo[s] = null;
+        this.edgeTo[s] = s;
         dfs(graph, s);
     }
 
@@ -42,9 +42,10 @@ public class UndirectedPaths {
     Iterable<Integer> pathTo(int v) {
 
         Stack<Integer> stack = new LinkedStack<>();
-        for (Integer w = v; w != null; w = edgeTo[w]) {
+        for (int w = v; w != s; w = edgeTo[w]) {
             stack.push(w);
         }
+        stack.push(s);
         return stack;
     }
 }
