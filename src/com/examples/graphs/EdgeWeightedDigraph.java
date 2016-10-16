@@ -3,15 +3,15 @@ package com.examples.graphs;
 import com.examples.basic.Bag;
 import com.examples.basic.LinkedListBag;
 
-public class EdgeWeightedGraph {
+public class EdgeWeightedDigraph {
 
     private final int V;
     private int E;
 
-    private Bag<Edge>[] adj;
+    private Bag<DirectedEdge>[] adj;
 
     @SuppressWarnings("unchecked")
-    public EdgeWeightedGraph(int v) {
+    public EdgeWeightedDigraph(int v) {
         this.V = v;
         this.adj = new Bag[v];
 
@@ -28,27 +28,21 @@ public class EdgeWeightedGraph {
         return E;
     }
 
-    public void addEdge(Edge edge) {
-
-        int v = edge.either();
-        int w = edge.other(v);
-        adj[v].add(edge);
-        adj[w].add(edge);
+    public void addEdge(DirectedEdge edge) {
+        adj[edge.from].add(edge);
         E++;
     }
 
-    public Iterable<Edge> adj(int v) {
+    public Iterable<DirectedEdge> adj(int v) {
         return adj[v];
     }
 
-    public Iterable<Edge> edges() {
+    public Iterable<DirectedEdge> edges() {
 
-        Bag<Edge> edges = new LinkedListBag<>();
+        Bag<DirectedEdge> edges = new LinkedListBag<>();
         for (int v = 0; v < V; v++) {
-            for (Edge edge : adj(v)) {
-                if (edge.other(v) > v) {
-                    edges.add(edge);
-                }
+            for (DirectedEdge edge : adj(v)) {
+                edges.add(edge);
             }
         }
         return edges;
@@ -59,37 +53,31 @@ public class EdgeWeightedGraph {
         String s = V + " vertices, " + E + " edges\n";
         for (int v = 0; v < V; v++) {
             s += v + ": ";
-            for (Edge e : this.adj(v))
+            for (DirectedEdge e : this.adj(v))
                 s += e + " ";
             s += "\n";
         }
         return s;
     }
 
-    public static class Edge implements Comparable<Edge> {
+    public static class DirectedEdge implements Comparable<DirectedEdge> {
 
-        private int v;
-        private int w;
+        private int from;
+        private int to;
         private double weight;
 
-        public Edge(int v, int w, double weight) {
-            this.v = v;
-            this.w = w;
+        public DirectedEdge(int from, int to, double weight) {
+            this.from = from;
+            this.to = to;
             this.weight = weight;
         }
 
-        public int either() {
-            return v;
+        public int from() {
+            return from;
         }
 
-        public int other(int t) {
-            if (v == t) {
-                return w;
-            } else if (w == t) {
-                return v;
-            } else {
-                throw new IllegalArgumentException();
-            }
+        public int to() {
+            return to;
         }
 
         public double weight() {
@@ -97,7 +85,7 @@ public class EdgeWeightedGraph {
         }
 
         @Override
-        public int compareTo(Edge that) {
+        public int compareTo(DirectedEdge that) {
 
             if (this.weight < that.weight) {
                 return -1;
@@ -110,7 +98,7 @@ public class EdgeWeightedGraph {
 
         @Override
         public String toString() {
-            return String.format("%d-%d %.2f", v, w, weight);
+            return String.format("%d->%d %.2f", from, to, weight);
         }
     }
 }
