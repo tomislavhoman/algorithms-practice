@@ -1,5 +1,9 @@
 package com.examples.basic;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
+import java.util.Iterator;
+
 public class ResizableArrayStack<Item> implements Stack<Item> {
 
     private static final int INITIAL_SIZE = 4;
@@ -53,5 +57,10 @@ public class ResizableArrayStack<Item> implements Stack<Item> {
         }
 
         stack = newStack;
+    }
+
+    @Override
+    public Iterator<Item> iterator() {
+        throw new NotImplementedException();
     }
 }
