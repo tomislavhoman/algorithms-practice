@@ -3,7 +3,7 @@ package com.examples.graphs;
 import com.examples.basic.Bag;
 import com.examples.basic.LinkedListBag;
 
-public class Graph {
+public class Digraph {
 
     private final int V;
     private int E;
@@ -11,7 +11,7 @@ public class Graph {
     private Bag<Integer>[] adj;
 
     @SuppressWarnings("unchecked")
-    public Graph(int v) {
+    public Digraph(int v) {
         this.V = v;
         this.adj = new Bag[v];
 
@@ -31,12 +31,22 @@ public class Graph {
     public void addEdge(int v, int w) {
 
         adj[v].add(w);
-        adj[w].add(v);
         E++;
     }
 
     public Iterable<Integer> adj(int v) {
         return adj[v];
+    }
+
+    public Digraph reverse() {
+
+        Digraph digraph = new Digraph(V);
+        for (int v = 0; v < V; v++) {
+            for (int w : adj(v)) {
+                digraph.addEdge(w, v);
+            }
+        }
+        return digraph;
     }
 
     @Override

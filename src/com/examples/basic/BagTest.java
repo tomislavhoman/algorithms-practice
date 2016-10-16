@@ -24,10 +24,14 @@ public class BagTest {
 
         assert bag.size() == 19;
 
+        int count = 0;
         int i = 19;
         for (int item : bag) {
             assert item == i;
             i--;
+            count++;
         }
+
+        assert count == 19;
     }
 }
