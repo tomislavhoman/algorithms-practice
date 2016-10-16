@@ -1,11 +1,11 @@
 package com.examples.graphs;
 
-public class UndirectedPathsTest {
+public class UndirectedDfsPathsTest {
 
     public static void main(String[] args) {
 
         Graph graph = loadGraph();
-        testPaths(new UndirectedPaths(graph, 0));
+        testPaths(new UndirectedDfsPaths(graph, 0));
         System.out.println("All OK");
     }
 
@@ -24,7 +24,7 @@ public class UndirectedPathsTest {
         return graph;
     }
 
-    private static void testPaths(UndirectedPaths paths) {
+    private static void testPaths(UndirectedDfsPaths paths) {
 
         assert paths.hasPathTo(0);
         assert paths.hasPathTo(1);
@@ -43,7 +43,7 @@ public class UndirectedPathsTest {
         testPath(paths, 5, new int[]{0, 2, 3, 5});
     }
 
-    private static void testPath(UndirectedPaths paths, int v, int[] vertices) {
+    private static void testPath(UndirectedDfsPaths paths, int v, int[] vertices) {
 
         int i = 0;
         for (int w : paths.pathTo(v)) {

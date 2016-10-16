@@ -3,14 +3,14 @@ package com.examples.graphs;
 import com.examples.basic.LinkedStack;
 import com.examples.basic.Stack;
 
-public class UndirectedPaths {
+public class UndirectedDfsPaths {
 
     private final int s;
 
     private boolean marked[];
     private int edgeTo[];
 
-    public UndirectedPaths(Graph graph, int s) {
+    public UndirectedDfsPaths(Graph graph, int s) {
 
         this.s = s;
         this.marked = new boolean[graph.v()];
