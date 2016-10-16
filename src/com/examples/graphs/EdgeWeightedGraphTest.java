@@ -102,6 +102,25 @@ public class EdgeWeightedGraphTest {
                         new EdgeWeightedGraph.Edge(4, 7, 0.37),
                 }
         );
+
+        testEdges(graph, new EdgeWeightedGraph.Edge[]{
+                new EdgeWeightedGraph.Edge(5, 7, 0.28),
+                new EdgeWeightedGraph.Edge(4, 5, 0.35),
+                new EdgeWeightedGraph.Edge(4, 7, 0.37),
+                new EdgeWeightedGraph.Edge(6, 4, 0.93),
+                new EdgeWeightedGraph.Edge(3, 6, 0.52),
+                new EdgeWeightedGraph.Edge(2, 3, 0.17),
+                new EdgeWeightedGraph.Edge(2, 7, 0.34),
+                new EdgeWeightedGraph.Edge(6, 2, 0.40),
+                new EdgeWeightedGraph.Edge(1, 5, 0.32),
+                new EdgeWeightedGraph.Edge(1, 7, 0.19),
+                new EdgeWeightedGraph.Edge(1, 2, 0.36),
+                new EdgeWeightedGraph.Edge(1, 3, 0.29),
+                new EdgeWeightedGraph.Edge(0, 7, 0.16),
+                new EdgeWeightedGraph.Edge(0, 4, 0.38),
+                new EdgeWeightedGraph.Edge(0, 2, 0.26),
+                new EdgeWeightedGraph.Edge(6, 0, 0.58),
+        });
     }
 
     private static void testNeighbourhood(EdgeWeightedGraph graph, int v, EdgeWeightedGraph.Edge[] neighbours) {
@@ -114,13 +133,13 @@ public class EdgeWeightedGraphTest {
         }
     }
 
-    private static class Pair {
-        public final int first;
-        public final double second;
-
-        private Pair(int first, double second) {
-            this.first = first;
-            this.second = second;
+    private static void testEdges(EdgeWeightedGraph graph, EdgeWeightedGraph.Edge[] edges) {
+        int i = 0;
+        for (EdgeWeightedGraph.Edge edge : graph.edges()) {
+            assert edge.either() == edges[i].either() : String.format("%dth edge failed", i);
+            assert edge.other(edge.either()) == edges[i].other(edges[i].either()) : String.format("%dth edge failed", i);
+            assert edge.weight() == edges[i].weight() : String.format("%dth edge failed", i);
+            i++;
         }
     }
 }
