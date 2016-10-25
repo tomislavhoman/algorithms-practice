@@ -7,8 +7,8 @@ public class UndirectedDfsPaths {
 
     private final int s;
 
-    private boolean marked[];
-    private int edgeTo[];
+    private final boolean marked[];
+    private final int edgeTo[];
 
     public UndirectedDfsPaths(Graph graph, int s) {
 
@@ -19,8 +19,6 @@ public class UndirectedDfsPaths {
             this.edgeTo[i] = i;
         }
 
-        this.marked[s] = true;
-        this.edgeTo[s] = s;
         dfs(graph, s);
     }
 
