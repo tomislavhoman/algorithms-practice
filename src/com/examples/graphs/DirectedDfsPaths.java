@@ -19,7 +19,7 @@ public class DirectedDfsPaths {
             this.edgeTo[i] = i;
         }
 
-        dfs(digraph, 0);
+        dfs(digraph, s);
     }
 
     private void dfs(Digraph digraph, int v) {
