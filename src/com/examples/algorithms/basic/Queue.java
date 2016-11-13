@@ -1,0 +1,10 @@
+package com.examples.algorithms.basic;
+
+public interface Queue<Item> {
+
+    void enqueue(Item item);
+
+    Item dequeue();
+
+    boolean isEmpty();
+}
