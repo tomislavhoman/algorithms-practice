@@ -1,5 +1,9 @@
 package com.examples.algorithms.basic;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
+import java.util.Iterator;
+
 public class ResizableArrayQueue<Item> implements Queue<Item> {
 
     private static final int INITIAL_SIZE = 4;
@@ -84,5 +88,10 @@ public class ResizableArrayQueue<Item> implements Queue<Item> {
         tail = size;
 
         queue = newQueue;
+    }
+
+    @Override
+    public Iterator<Item> iterator() {
+        throw new NotImplementedException();
     }
 }

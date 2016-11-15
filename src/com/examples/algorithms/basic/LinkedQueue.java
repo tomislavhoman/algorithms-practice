@@ -1,5 +1,7 @@
 package com.examples.algorithms.basic;
 
+import java.util.Iterator;
+
 public class LinkedQueue<Item> implements Queue<Item> {
 
     private Node head;
@@ -41,8 +43,34 @@ public class LinkedQueue<Item> implements Queue<Item> {
         return head == null && tail == null;
     }
 
+    @Override
+    public Iterator<Item> iterator() {
+        return new QueueIterator();
+    }
+
     private class Node {
         Item item;
         Node next;
+    }
+
+    private class QueueIterator implements Iterator<Item> {
+
+        private Node current;
+
+        private QueueIterator() {
+            this.current = head;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return current != null;
+        }
+
+        @Override
+        public Item next() {
+            Item item = current.item;
+            current = current.next;
+            return item;
+        }
     }
 }
