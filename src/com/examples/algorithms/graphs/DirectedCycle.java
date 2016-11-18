@@ -2,6 +2,9 @@ package com.examples.algorithms.graphs;
 
 import com.examples.algorithms.basic.LinkedStack;
 import com.examples.algorithms.basic.Stack;
+import com.examples.algorithms.graphs.iterator.AdjacencyIterator;
+import com.examples.algorithms.graphs.iterator.DigraphAdjacencyIterator;
+import com.examples.algorithms.graphs.iterator.EdgeWeightedDigraphAdjacencyIterator;
 
 public class DirectedCycle {
 
@@ -12,31 +15,39 @@ public class DirectedCycle {
     private Iterable<Integer> cycle;
 
     public DirectedCycle(Digraph digraph) {
+        this(digraph.v(), new DigraphAdjacencyIterator(digraph));
+    }
 
-        this.marked = new boolean[digraph.v()];
-        this.edgeTo = new int[digraph.v()];
-        this.onStack = new boolean[digraph.v()];
+    public DirectedCycle(EdgeWeightedDigraph digraph) {
+        this(digraph.v(), new EdgeWeightedDigraphAdjacencyIterator(digraph));
+    }
 
-        for (int v = 0; v < digraph.v(); v++) {
+    private DirectedCycle(int numberOfVertices, AdjacencyIterator adjacencyIterator) {
+
+        this.marked = new boolean[numberOfVertices];
+        this.edgeTo = new int[numberOfVertices];
+        this.onStack = new boolean[numberOfVertices];
+
+        for (int v = 0; v < numberOfVertices; v++) {
             this.edgeTo[v] = v;
         }
 
-        for (int v = 0; v < digraph.v(); v++) {
+        for (int v = 0; v < numberOfVertices; v++) {
             if (!this.marked[v]) {
-                dfs(v, digraph);
+                dfs(v, adjacencyIterator);
             }
         }
     }
 
-    private void dfs(int v, Digraph digraph) {
+    private void dfs(int v, AdjacencyIterator adjacencyIterator) {
 
         marked[v] = true;
         onStack[v] = true;
 
-        for (int w : digraph.adj(v)) {
+        for (int w : adjacencyIterator.adj(v)) {
             if (!marked[w]) {
                 edgeTo[w] = v;
-                dfs(w, digraph);
+                dfs(w, adjacencyIterator);
             } else if (edgeTo[w] != v && onStack[w] && !hasCycle()) {
                 Stack<Integer> stack = new LinkedStack<>();
                 stack.push(w);

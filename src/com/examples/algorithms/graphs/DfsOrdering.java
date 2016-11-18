@@ -4,6 +4,9 @@ import com.examples.algorithms.basic.LinkedQueue;
 import com.examples.algorithms.basic.LinkedStack;
 import com.examples.algorithms.basic.Queue;
 import com.examples.algorithms.basic.Stack;
+import com.examples.algorithms.graphs.iterator.AdjacencyIterator;
+import com.examples.algorithms.graphs.iterator.DigraphAdjacencyIterator;
+import com.examples.algorithms.graphs.iterator.EdgeWeightedDigraphAdjacencyIterator;
 
 public class DfsOrdering {
 
@@ -12,28 +15,36 @@ public class DfsOrdering {
     private final Queue<Integer> postorder;
     private final Stack<Integer> reversePostorder;
 
-    public DfsOrdering(Digraph digraph) {
+    public DfsOrdering(EdgeWeightedDigraph digraph) {
+        this(digraph.v(), new EdgeWeightedDigraphAdjacencyIterator(digraph));
+    }
 
-        this.marked = new boolean[digraph.v()];
+    public DfsOrdering(Digraph digraph) {
+        this(digraph.v(), new DigraphAdjacencyIterator(digraph));
+    }
+
+    private DfsOrdering(int numberOfVertices, AdjacencyIterator adjacencyIterator) {
+
+        this.marked = new boolean[numberOfVertices];
         this.preorder = new LinkedQueue<>();
         this.postorder = new LinkedQueue<>();
         this.reversePostorder = new LinkedStack<>();
 
-        for (int v = 0; v < digraph.v(); v++) {
+        for (int v = 0; v < numberOfVertices; v++) {
             if (!marked[v]) {
-                dfs(v, digraph);
+                dfs(v, adjacencyIterator);
             }
         }
     }
 
-    private void dfs(int v, Digraph digraph) {
+    private void dfs(int v, AdjacencyIterator adjacencyIterator) {
 
         preorder.enqueue(v);
 
         marked[v] = true;
-        for (int w : digraph.adj(v)) {
+        for (int w : adjacencyIterator.adj(v)) {
             if (!marked[w]) {
-                dfs(w, digraph);
+                dfs(w, adjacencyIterator);
             }
         }
 

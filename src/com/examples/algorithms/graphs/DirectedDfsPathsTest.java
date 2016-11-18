@@ -33,7 +33,6 @@ public class DirectedDfsPathsTest {
         digraph.addEdge(11, 4);
         digraph.addEdge(11, 12);
         digraph.addEdge(12, 9);
-
         return digraph;
     }
 

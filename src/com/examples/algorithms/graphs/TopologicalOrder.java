@@ -5,9 +5,17 @@ public class TopologicalOrder {
     private Iterable<Integer> order;
 
     public TopologicalOrder(Digraph digraph) {
+        this(new DirectedCycle(digraph), new DfsOrdering(digraph));
+    }
 
-        if (!(new DirectedCycle(digraph).hasCycle())) {
-            this.order = new DfsOrdering(digraph).reversePostorder();
+    public TopologicalOrder(EdgeWeightedDigraph digraph) {
+        this(new DirectedCycle(digraph), new DfsOrdering(digraph));
+    }
+
+    private TopologicalOrder(DirectedCycle directedCycle, DfsOrdering dfsOrdering) {
+
+        if (!(directedCycle.hasCycle())) {
+            this.order = dfsOrdering.reversePostorder();
         }
     }
 
